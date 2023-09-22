@@ -4,10 +4,10 @@ import numpy as np
 with open('datos.txt', 'r') as file:
     lines = file.readlines()
 
-# número de grupos desde la primera linea
+# número de grupos desde la primera línea
 num_groups = int(lines[0])
 
-# nombres de las etiquetas desde la 2da linea
+# nombres de las etiquetas desde la 2da línea
 labels = lines[1].split()
 
 # almacenar los grupos de números flotantes
@@ -16,7 +16,7 @@ groups = [[] for _ in range(num_groups)]
 # Inicializar una variable para rastrear el grupo actual
 current_group = 0
 
-# Procesa el archivo desde la 3ra linea y utiliza "//" para separar los grupos
+# Procesa el archivo desde la 3ra línea y utiliza "//" para separar los grupos
 for line in lines[2:]:
     line = line.strip()
     if line == "//":
@@ -27,11 +27,11 @@ for line in lines[2:]:
 # Crear y mostrar los histogramas en ventanas separadas con etiquetas
 # personalizadas para cada grupo
 for i in range(num_groups):
-    plt.figure()  # Crea una nueva ventana de graficos
+    plt.figure()  # Crea una nueva ventana de gráficos
     plt.hist(groups[i], bins=20, edgecolor='k')
     plt.title(f'Histograma de {labels[i]}')
     plt.xlabel('Valor')
     plt.ylabel('Frecuencia')
 
-# Mostrar todas las ventanas de graficos
+# Mostrar todas las ventanas de gráficos
 plt.show()
